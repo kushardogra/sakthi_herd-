@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-AtHire Dashboard</title>
+</head>
+<body>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .login-logo{
+            width: 100%;
+            display:flex;
+            justify-content: center;
+        }
+
+        .login-logo img{
+            width:80vw;
+        }
+
+        form{
+            width:70%;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form .credentials{
+            display:flex;
+            flex-direction: column;
+            margin-top:5vh;
+            width: 100%;
+        }
+
+        form .credentials input{
+            border-radius: 10px;
+            height: 35px;
+            border: 2px solid #787575;
+            font-size: 1.3em;
+            color: black;
+            padding: 0px 10px;
+            margin-top: 20px
+        }
+        #login-btn{
+            background: #cf8d72;
+            border: none;
+            color: #ffffff;
+            margin-top: 20px;
+            border-radius: 10px;
+            padding: 5px 10px;
+        }
+
+        #Login-btn span{
+            font-size:2.5em
+        }
+    </style>
+    <div class="login-logo">
+        <img src="{% static 'images/athire-logo.PNG' %}" alt="">
+    </div>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="credentials">
+            <input name="username" type="text" id="username" placeholder="Username" required>
+            <input name="password" type="password" id="password" placeholder="Password" required>
+        </div>
+        <button id="login-btn">
+            <span>
+                Sign in
+            </span>
+        </button>
+    </form>
+</body>
+</html>
